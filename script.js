@@ -1,20 +1,3 @@
-// var consultaCep = fetch("https://viacep.com.br/ws/01001000/json/")
-// .then(resposta => resposta.json())
-// .then(r => {  
-//     if(r.erro){
-//         throw Error("Esse cep não existe!")
-//     }else{
-//         console.log(r)
-//     }
-//     })
-// .catch(erro => console.log(erro))
-// .finally(mensagem => console.log("Processamento concluido")); 
-// fetch metodo assincrono com necessidade de uma url de API como parametro
-//then = então
-// arrow function de resposta.json() converte para json
-//Finaly() = finalmente, mostrando que o processamento terminou
-// console.log(consultaCep);
-
 async function buscaEndereco(cep){
     var mensagemErro = document.getElementById('erro');
     mensagemErro.innerHTML = "";
@@ -40,11 +23,6 @@ async function buscaEndereco(cep){
         console.log(erro);
     }
 }
-
-// let ceps = ['01001000', '01001001'];
-// let conjuntoCeps = ceps.map(valores => buscaEndereco(valores));
-
-// Promise.all(conjuntoCeps).then(respostas => console.log(respostas))
 
 var cep = document.getElementById('cep');
 cep.addEventListener("focusout", () => buscaEndereco(cep.value));
